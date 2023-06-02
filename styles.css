@@ -1,0 +1,104 @@
+* {
+    color: black;
+    background-color: yellow;
+    font-family: 'Carme', sans-serif;
+}
+
+h4,
+h1 {
+    margin: 0;
+    padding: 0;
+    padding-left: 50px;
+}
+
+#title {
+    display: inline-block;
+    position: relative;
+}
+
+#title::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 5%);
+    transform: scaleX(0);
+    height: 7px;
+    bottom: -15px;
+    border-radius: 25px;
+    left: 4%;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.50s ease-out;
+}
+
+#title.play-animation::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#title {
+    font-size: 200px;
+}
+
+#t-text {
+    font-size: 50px;
+    padding-top: 50px;
+}
+
+#title-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 50px;
+    height: 550px;
+    width: auto;
+}
+
+.under-animation {
+    display: inline-block;
+    position: relative;
+    color: black;
+}
+
+.under-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    border-radius: 25px;
+    left: 0;
+    background-color: black;
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+}
+
+.under-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+nav {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    padding-top: 25px;
+    font-size: 25px;
+    min-width: 0px;
+    transition: top 0.5s;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+#content p {
+    display: flex;
+    font-size: 20px;
+    padding-left: 50px;
+}
