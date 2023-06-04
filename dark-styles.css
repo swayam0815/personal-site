@@ -1,13 +1,16 @@
 * {
-    color: black;
-    background-color: yellow;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: yellow;
+    background-color: black;
     font-family: 'Carme', sans-serif;
 }
 
 h4,
 h1 {
-    margin: 0;
-    padding: 0;
     padding-left: 50px;
 }
 
@@ -25,14 +28,18 @@ h1 {
     bottom: -15px;
     border-radius: 25px;
     left: 4%;
-    background-color: black;
+    background-color: yellow;
     transform-origin: bottom right;
-    transition: transform 0.50s ease-out;
+    transition: transform 1s;
 }
 
 #title.play-animation::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+#title::after {
+    transform: scaleX(0);
 }
 
 #title {
@@ -45,19 +52,23 @@ h1 {
 }
 
 #title-box {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
     padding: 50px;
-    height: 550px;
+    height: 100vh;
     width: auto;
+    box-sizing: border-box;
+    /* Added */
 }
 
 .under-animation {
     display: inline-block;
     position: relative;
-    color: black;
+    color: yellow;
 }
 
 .under-animation::after {
@@ -69,7 +80,7 @@ h1 {
     bottom: 0;
     border-radius: 25px;
     left: 0;
-    background-color: black;
+    background-color: yellow;
     transform-origin: center;
     transition: transform 0.25s ease-out;
 }
@@ -99,6 +110,9 @@ nav a {
 
 #content p {
     display: flex;
-    font-size: 20px;
+    font-size: 25px;
     padding-left: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }

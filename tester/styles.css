@@ -1,0 +1,15 @@
+#slideshow-container {
+    height: 100vh;
+    /* Set the height of the container to full viewport height */
+    overflow: hidden;
+    /* Hide overflow */
+}
+
+.slide {
+    height: 100vh;
+    /* Set the height of each slide to full viewport height */
+    width: 100%;
+    /* Set the width to fill the container */
+    scroll-snap-align: start;
+    /* Enable snapping to each slide */
+}

@@ -1,11 +1,8 @@
 window.addEventListener('load', function() {
     var titleElement = document.getElementById('title');
     titleElement.classList.add('play-animation');
-
-    setTimeout(function() {
-        titleElement.classList.remove('play-animation');
-    }, 500); // Duration of the animation in milliseconds
 });
+
 
 var prevScrollPos = window.pageYOffset;
 
