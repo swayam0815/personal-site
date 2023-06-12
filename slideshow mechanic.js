@@ -1,9 +1,3 @@
-window.addEventListener('load', function() {
-    var titleElement = document.getElementById('title');
-    titleElement.classList.add('play-animation');
-});
-
-
 var prevScrollPos = window.pageYOffset;
 
 window.onscroll = function() {
@@ -18,7 +12,6 @@ window.onscroll = function() {
 
     prevScrollPos = currentScrollPos;
 };
-
 
 var divs = document.getElementsByClassName('content');
 var j = 0;
@@ -37,6 +30,8 @@ for (var i = 0; i < divs.length; i++) {
 
 
 container.addEventListener('click', changeDiv);
+container.addEventListener('wheel', changeDiv);
+
 
 function changeDiv() {
     divs[j].classList.remove('active');
@@ -47,20 +42,10 @@ function changeDiv() {
     j = (j + 1) % divs.length;
 
     setTimeout(function() {
-        divs[j].addEventListener('animationend', handleAnimationEnd);
-        divs[j].classList.add('slide-up');
-
         divs[j].classList.add('active');
         divs[j].style.width = divOriginalStyles[j].width;
         console.log(divs[j].style.width + " and original width is " + divOriginalStyles[j].width);
         divs[j].style.height = divOriginalStyles[j].height;
         divs[j].style.padding = divOriginalStyles[j].padding;
     }, 10);
-}
-
-function handleAnimationEnd(event) {
-    if (event.animationName === 'slide-up') {
-        divs[j].classList.remove('slide-up');
-        divs[j].removeEventListener('animationend', handleAnimationEnd);
-    }
 }

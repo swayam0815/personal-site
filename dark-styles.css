@@ -4,14 +4,14 @@
 }
 
 body {
-    color: yellow;
+    color: green;
     background-color: black;
     font-family: 'Carme', sans-serif;
 }
 
 h4,
 h1 {
-    padding-left: 50px;
+    padding-left: 3vw;
 }
 
 #title {
@@ -28,7 +28,7 @@ h1 {
     bottom: -15px;
     border-radius: 25px;
     left: 4%;
-    background-color: yellow;
+    background-color: green;
     transform-origin: bottom right;
     transition: transform 1s;
 }
@@ -43,11 +43,11 @@ h1 {
 }
 
 #title {
-    font-size: 200px;
+    font-size: 14vw;
 }
 
 #t-text {
-    font-size: 50px;
+    font-size: 5vw;
     padding-top: 50px;
 }
 
@@ -68,7 +68,7 @@ h1 {
 .under-animation {
     display: inline-block;
     position: relative;
-    color: yellow;
+    color: green;
 }
 
 .under-animation::after {
@@ -80,7 +80,7 @@ h1 {
     bottom: 0;
     border-radius: 25px;
     left: 0;
-    background-color: yellow;
+    background-color: green;
     transform-origin: center;
     transition: transform 0.25s ease-out;
 }
@@ -98,21 +98,75 @@ nav {
     display: flex;
     justify-content: center;
     gap: 45px;
-    padding-top: 25px;
+    padding: 20px;
     font-size: 25px;
     min-width: 0px;
-    transition: top 0.5s;
+    transition: top 2s;
 }
 
 nav a {
     text-decoration: none;
 }
 
-#content p {
+.content {
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    display: none;
+    transform-origin: left top;
+    transition: opacity 1s ease;
+}
+
+.content.active {
+    opacity: 1;
+    height: auto;
+    width: auto;
+}
+
+.container {
     display: flex;
-    font-size: 25px;
-    padding-left: 50px;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#title-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 4vw;
+    font-size: 4vw;
+}
+
+#title-box p {
+    letter-spacing: 1vw;
+    font-size: 1.5em;
+}
+
+#desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vw;
+    font-size: 4em;
+    width: 90vw;
+    height: 90vh;
+    overflow: auto;
+    text-align: justify;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.slide-up {
+    animation: slide-up 1s;
 }
