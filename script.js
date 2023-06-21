@@ -1,12 +1,6 @@
 var descc = document.getElementById('desc');
-
-
-window.addEventListener('load', function() {
-    var titleElement = document.getElementById('title');
-    //descc.style.display = 'none';
-    titleElement.classList.add('play-animation');
-});
-
+var title = document.getElementById('title-box');
+var about = document.getElementById('about');
 
 var prevScrollPos = window.pageYOffset;
 
@@ -23,23 +17,12 @@ window.onscroll = function() {
     prevScrollPos = currentScrollPos;
 };
 
+about.style.visibility = "hidden";
+descc.style.visibility = "hidden";
 
-var title = document.getElementById("title-box");
-title.addEventListener('click', function() {
-
-    title.style.animation = "slide-out 1s forwards";
-    descc.style.display = 'flex';
-
-    descc.style.animation = "slide-up 1s forwards";
-
-    title.style.animation = "slide-down 1s forwards";
-
-})
-
-
-descc.addEventListener('click', function() {
-    title.style.visibility = "visible";
-
-    title.style.animation = "slide-up 1s forwards";
-
-})
+about.style.animation = "slide-out 1s forwards";
+descc.style.animation = "slide-out2 1s forwards";
+console.log(document.getElementById("index").childElementCount);
+// about.addEventListener('animationend', function() {
+//     about.style.opacity = "0";
+// })

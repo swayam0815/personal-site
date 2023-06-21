@@ -7,6 +7,7 @@ body {
     color: black;
     background-color: gold;
     font-family: 'Carme', sans-serif;
+    overflow: hidden;
 }
 
 #title-box h4,
@@ -139,13 +140,17 @@ nav a:visited {
     align-items: center;
     justify-content: center;
     padding: 6vw;
-    font-size: 3.5vw;
+    font-size: 3.3vw;
     width: 85vw;
     height: 90vh;
     overflow: auto;
     text-align: center;
     line-height: 1.5;
     text-align: left;
+}
+
+.desc p {
+    width: 100%;
 }
 
 @keyframes slide-up {
@@ -158,11 +163,14 @@ nav a:visited {
 }
 
 @keyframes slide-out {
-    0% {
-        transform: translateY(0%);
-    }
     100% {
         transform: translateY(-100%);
+    }
+}
+
+@keyframes slide-out2 {
+    100% {
+        transform: translateY(-200%);
     }
 }
 
@@ -179,12 +187,15 @@ nav a:visited {
     text-decoration: underline black;
     padding: 0;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
-.special-links:hover {
-    background-color: black;
-    color: gold;
-    text-decoration: underline gold;
+.links:hover {
+    box-sizing: border-box;
+    background-color: rgba(128, 128, 128, 0.3);
+    color: black;
+    text-decoration: underline black;
+    border: black solid 5px;
     border-radius: 10px;
 }
 
@@ -210,5 +221,34 @@ nav a:visited {
 }
 
 #western {
-    color: #5106ae
+    font-weight: bold;
+    color: #5106ae;
+}
+
+#western a {
+    text-decoration: none;
+}
+
+#western a:active,
+#western a:visited {
+    color: #5106ae;
+}
+
+#western a:hover {
+    box-sizing: border-box;
+    background-color: rgba(187, 136, 255, 0.3);
+    text-decoration: underline #5106ae;
+    border: #5106ae solid 5px;
+    border-radius: 10px;
+}
+
+.special {
+    color: yellow;
+    background-color: black;
+    border-radius: 1vw;
+    border: black solid .5vw;
+}
+
+#about {
+    transition: opacity 1s;
 }
