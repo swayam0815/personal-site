@@ -1,0 +1,175 @@
+* {
+    background-color: gold;
+    color: black;
+    font-family: 'Carme', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {}
+
+.under-animation {
+    display: inline-block;
+    position: relative;
+    color: black;
+}
+
+.under-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    border-radius: 25px;
+    left: 0;
+    background-color: black;
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+}
+
+.under-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+nav {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    padding: 2vh;
+    font-size: 3.5vh;
+    transition: top 1s;
+    background-color: gold;
+    z-index: 2;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 80vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.center {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: inherit;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#content {
+    width: 80vw;
+    height: 100vh;
+}
+
+#title h1 {
+    font-size: 12vw;
+}
+
+h4 {
+    font-size: 5vw;
+}
+
+#btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+#title,
+#about,
+#overview {
+    transition: transform 1s, visibility 1s, opacity 1s;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5vw;
+    height: 3.5vw;
+    border: .5vw solid rgb(201, 121, 0);
+    transform: rotate(45deg);
+    background-color: gold;
+    border-radius: 1vw;
+    transition: transform 300ms;
+}
+
+.inner {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+    border-radius: 0;
+    border: .5vw solid rgb(0, 0, 0);
+}
+
+.inner.selected {
+    background-color: black;
+    border: gold
+}
+
+.inner:hover {
+    background-color: black;
+    border: gold
+}
+
+.btn.selected {
+    border: .5vw solid rgb(0, 0, 0);
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.slide {
+    animation: slide-up 1s ease-out;
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.slide-down {
+    animation: slide-down 1s ease-out;
+}

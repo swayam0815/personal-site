@@ -162,27 +162,6 @@ nav a:visited {
     }
 }
 
-@keyframes slide-out {
-    100% {
-        transform: translateY(-100%);
-    }
-}
-
-@keyframes slide-out2 {
-    100% {
-        transform: translateY(-200%);
-    }
-}
-
-@keyframes slide-down {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
-
 .special-links {
     text-decoration: underline black;
     padding: 0;
