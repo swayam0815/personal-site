@@ -197,11 +197,12 @@ h4 {
 
 #western {
     font-weight: bold;
-    color: lightpu;
+    color: #7412c4;
 }
 
 #western a:active,
 #western a:visited {
+    font-weight: bold;
     color: #7412c4;
 }
 
@@ -213,13 +214,12 @@ h4 {
 }
 
 .special {
-    color: crimson;
+    color: navy;
     background-color: #d4fadd;
 }
 
 #special {
-    color: navy;
-    font-size: 2.5vw;
+    color: darkorange;
     font-weight: bold;
     background-color: #d4fadd;
 }
@@ -257,4 +257,34 @@ p {
 ul {
     list-style-image: url('bullet.png');
     list-style-position: outside;
+}
+
+@media (max-width: 768px) {
+    .underlines:after {
+        margin-bottom: 1vh;
+    }
+    p {
+        line-height: 5vh;
+        font-size: 5vw;
+    }
+    h4 {
+        font-size: 5vw;
+    }
+    #title h1 {
+        font-size: 12vw;
+    }
+    nav {
+        font-size: 3.5vh;
+    }
+    .btn {
+        width: 5vw;
+        height: 5vw;
+        border: .5vw solid #B1AFFF;
+        transform: rotate(45deg);
+        border-radius: 1vw;
+    }
+    .inner {
+        width: 2.5vw;
+        height: 2.5vw;
+    }
 }
