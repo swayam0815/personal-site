@@ -3,6 +3,9 @@ var prevScrollPos = window.scrollY;
 var title = document.getElementById('title');
 var about = document.getElementById('about');
 var over = document.getElementById('overview');
+window.onload = function() {
+    alert("Click on the text to scroll through the page rn, I'm too lazy to do finish the buttons, site also looks better on computer")
+};
 
 
 const divs = [];
