@@ -3,12 +3,14 @@ var prevScrollPos = window.scrollY;
 var title = document.getElementById('title');
 var about = document.getElementById('about');
 var over = document.getElementById('overview');
+var active;
 window.onload = function() {
-    alert("Click on the text to scroll through the page rn, I'm too lazy to do finish the buttons, site also looks better on computer")
+    // alert("Click on the text to scroll through the page rn, I'm too lazy to do finish the buttons, site also looks better on computer")
 };
 
 
 const divs = [];
+const buttons = [];
 
 window.onscroll = function() {
     var currentScrollPos = window.scrollY;
@@ -42,8 +44,9 @@ for (var i = 0; i < child.length; i++) {
     const temp = {
         myself: child[i].id,
         prev: prev,
-        next: next
+        next: next,
     };
+    console.log(temp.i);
 
     divs.push(temp);
 
@@ -52,27 +55,33 @@ for (var i = 0; i < child.length; i++) {
         child[i].style.visibility = 'hidden';
     }
 
-    child[i].addEventListener('click', function(e) {
-        var clickedId = this.id;
-        var me = divs.find(function(obj) {
-            return obj.myself === clickedId;
-        });
-        if (me) {
-            this.style.visibility = 'hidden';
-            this.style.opacity = '0';
-            me.next.style.visibility = 'visible';
-            me.next.classList.toggle('slide');
-            me.next.addEventListener('animationend', function() {
-                me.next.classList.remove('slide');
-            });
-            me.next.style.opacity = '1';
-            console.log("Hid " + this.id);
-            console.log("Showed " + me.next.id);
-
-        }
+    child[i].addEventListener('click', function() {
+        console.log(this);
+        changeDiv(this);
     });
 }
 
+
+function changeDiv(div) {
+    var clickedId = div.id;
+    var me = divs.find(function(obj) {
+        return obj.myself === clickedId;
+    });
+    if (me) {
+        div.style.visibility = 'hidden';
+
+        div.style.opacity = '0';
+        me.next.style.visibility = 'visible';
+        me.next.classList.toggle('slide');
+        me.next.addEventListener('animationend', function() {
+            me.next.classList.remove('slide');
+        });
+        me.next.style.opacity = '1';
+    } else {
+        console.log("Error");
+        console.log(div.myself);
+    }
+}
 
 // get element with id "btns" and store it in div
 var parent = document.getElementById('btns');
@@ -81,12 +90,20 @@ var num = document.getElementsByClassName('center').length;
 for (var i = 0; i < num; i++) {
     var temp = document.createElement('div');
     var inner = document.createElement('div');
+    temp.id = i;
     temp.classList.add('btn');
     inner.classList.add('inner');
     if (i == 0) {
-        temp.classList.add('selected');
-        inner.classList.add('selected');
+        temp.id = 'selected';
     }
     temp.appendChild(inner);
     parent.appendChild(temp);
+
+    var tempobj = { j: temp };
+    buttons.push(tempobj);
+    temp.addEventListener('click', function(e) {
+        var selected = document.getElementById('selected');
+        selected.id = "1";
+        this.id = 'selected';
+    });
 }

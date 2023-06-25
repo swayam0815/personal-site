@@ -1,5 +1,4 @@
 * {
-    background-color: #d4fadd;
     color: #1b4332;
     font-family: 'Carme', sans-serif;
     padding: 0;
@@ -9,6 +8,8 @@
 
 body {
     overflow: hidden;
+    background: rgb(212, 250, 221);
+    background: radial-gradient(circle, rgba(212, 250, 221, 1) 76%, rgba(244, 249, 245, 1) 100%);
 }
 
 .under-animation {
@@ -46,8 +47,7 @@ nav {
     gap: 2vw;
     padding: 2vh;
     font-size: 3.5vh;
-    transition: top .5s;
-    background-color: #d4fadd;
+    transition: top .4s;
     z-index: 2;
 }
 
@@ -109,7 +109,7 @@ h4 {
 #title,
 #about,
 #overview {
-    transition: transform .5s, visibility .5s, opacity .5s;
+    transition: transform .4s, visibility .4s, opacity .4s;
 }
 
 .btn {
@@ -120,7 +120,6 @@ h4 {
     height: 3.5vw;
     border: .5vw solid #B1AFFF;
     transform: rotate(45deg);
-    background-color: #d4fadd;
     border-radius: 1vw;
     transition: transform 300ms;
 }
@@ -136,18 +135,41 @@ h4 {
     border: .5vw solid #1b4332;
 }
 
-.inner.selected {
-    background-color: #1b4332;
-    border: #d4fadd
-}
-
 .btn:hover>.inner {
     background-color: #1b4332;
     border: #d4fadd
 }
 
-.btn.selected {
+#selected {
     border: .5vw solid #1b4332;
+    transform: rotate(0deg);
+    animation: spin 2s, pulse-animation 5s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#selected>.inner {
+    background-color: #1b4332;
+    border: #d4fadd
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
 }
 
 @keyframes slide-up {
@@ -160,7 +182,7 @@ h4 {
 }
 
 .slide {
-    animation: slide-up .5s ease-out;
+    animation: slide-up .4s ease-out;
 }
 
 @keyframes slide-down {
@@ -173,7 +195,7 @@ h4 {
 }
 
 .slide-down {
-    animation: slide-down .5s ease-out;
+    animation: slide-down .4s ease-out;
 }
 
 .special-links {
@@ -215,13 +237,11 @@ h4 {
 
 .special {
     color: navy;
-    background-color: #d4fadd;
 }
 
 #special {
     color: darkorange;
     font-weight: bold;
-    background-color: #d4fadd;
 }
 
 p {
@@ -257,6 +277,10 @@ p {
 ul {
     list-style-image: url('bullet.png');
     list-style-position: outside;
+}
+
+li {
+    margin: 1.5vw;
 }
 
 @media (max-width: 768px) {
