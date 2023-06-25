@@ -29,6 +29,7 @@ var content = document.getElementById('content');
 var child = content.querySelectorAll('div');
 child[0].style.visibility = 'visible';
 child[0].style.opacity = '1';
+child[0].classList.add('active');
 for (var i = 0; i < child.length; i++) {
     var prev, next;
     if (child[i].previousElementSibling != null) {
@@ -42,11 +43,10 @@ for (var i = 0; i < child.length; i++) {
         next = child[0];
     }
     const temp = {
-        myself: child[i].id,
+        myself: child[i],
         prev: prev,
         next: next,
     };
-    console.log(temp.i);
 
     divs.push(temp);
 
@@ -62,26 +62,18 @@ for (var i = 0; i < child.length; i++) {
 }
 
 
-function changeDiv(div) {
-    var clickedId = div.id;
-    var me = divs.find(function(obj) {
-        return obj.myself === clickedId;
-    });
-    if (me) {
-        div.style.visibility = 'hidden';
+function changeDiv(show, hide) {
+    hide.style.visibility = 'hidden';
 
-        div.style.opacity = '0';
-        me.next.style.visibility = 'visible';
-        me.next.classList.toggle('slide');
-        me.next.addEventListener('animationend', function() {
-            me.next.classList.remove('slide');
-        });
-        me.next.style.opacity = '1';
-    } else {
-        console.log("Error");
-        console.log(div.myself);
-    }
+    hide.style.opacity = '0';
+    show.style.visibility = 'visible';
+    show.classList.toggle('slide');
+    show.addEventListener('animationend', function() {
+        show.classList.remove('slide');
+    });
+    show.style.opacity = '1';
 }
+
 
 // get element with id "btns" and store it in div
 var parent = document.getElementById('btns');
@@ -90,11 +82,11 @@ var num = document.getElementsByClassName('center').length;
 for (var i = 0; i < num; i++) {
     var temp = document.createElement('div');
     var inner = document.createElement('div');
-    temp.id = i;
     temp.classList.add('btn');
     inner.classList.add('inner');
+    temp.id = i;
     if (i == 0) {
-        temp.id = 'selected';
+        temp.classList.add('selected');
     }
     temp.appendChild(inner);
     parent.appendChild(temp);
@@ -102,8 +94,10 @@ for (var i = 0; i < num; i++) {
     var tempobj = { j: temp };
     buttons.push(tempobj);
     temp.addEventListener('click', function(e) {
-        var selected = document.getElementById('selected');
-        selected.id = "1";
-        this.id = 'selected';
+        var selected = document.querySelectorAll('.selected')[0];
+        selected.classList.remove('selected');
+        this.classList.add('selected');
+        changeDiv(divs[this.id].myself, divs[selected.id].myself);
     });
+
 }

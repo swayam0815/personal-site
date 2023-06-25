@@ -109,7 +109,7 @@ h4 {
 #title,
 #about,
 #overview {
-    transition: transform .4s, visibility .4s, opacity .4s;
+    transition: transform .4s, visibility .4s, opacity .1s;
 }
 
 .btn {
@@ -121,7 +121,7 @@ h4 {
     border: .5vw solid #B1AFFF;
     transform: rotate(45deg);
     border-radius: 1vw;
-    transition: transform 300ms;
+    transition: transform 300ms, border-radius 5s;
 }
 
 .inner {
@@ -133,6 +133,7 @@ h4 {
     transform: scale(1.2);
     border-radius: 0;
     border: .5vw solid #1b4332;
+    border-radius: 1vw;
 }
 
 .btn:hover>.inner {
@@ -140,10 +141,16 @@ h4 {
     border: #d4fadd
 }
 
-#selected {
+.selected {
     border: .5vw solid #1b4332;
     transform: rotate(0deg);
-    animation: spin 2s, pulse-animation 5s infinite;
+    animation: pulse-animation 4s infinite;
+    border-radius: 0px;
+}
+
+.btn.selected>.inner {
+    background-color: #1b4332;
+    border: #d4fadd;
 }
 
 @keyframes pulse-animation {
@@ -156,11 +163,6 @@ h4 {
     100% {
         transform: scale(1);
     }
-}
-
-#selected>.inner {
-    background-color: #1b4332;
-    border: #d4fadd
 }
 
 @keyframes spin {
@@ -301,8 +303,8 @@ li {
         font-size: 3.5vh;
     }
     .btn {
-        width: 5vw;
-        height: 5vw;
+        width: 6vw;
+        height: 6vw;
         border: .5vw solid #B1AFFF;
         transform: rotate(45deg);
         border-radius: 1vw;
@@ -310,5 +312,16 @@ li {
     .inner {
         width: 2.5vw;
         height: 2.5vw;
+    }
+    @keyframes pulse-animation {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
 }
