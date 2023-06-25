@@ -9,7 +9,7 @@
 body {
     overflow: hidden;
     background: rgb(212, 250, 221);
-    background: radial-gradient(circle, rgba(212, 250, 221, 1) 76%, rgba(244, 249, 245, 1) 100%);
+    background: radial-gradient(circle, rgba(212, 250, 221, 1) 56%, rgba(244, 249, 245, 1) 100%);
 }
 
 .under-animation {
