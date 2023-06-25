@@ -131,6 +131,7 @@ h4 {
 
 .btn:hover {
     transform: scale(1.2);
+    transform: rotate(90deg);
     border-radius: 0;
     border: .5vw solid #1b4332;
     border-radius: 1vw;
@@ -138,13 +139,13 @@ h4 {
 
 .btn:hover>.inner {
     background-color: #1b4332;
-    border: #d4fadd
+    border: #d4fadd;
 }
 
 .selected {
     border: .5vw solid #1b4332;
     transform: rotate(0deg);
-    animation: pulse-animation 4s infinite;
+    animation: pulse-animation 3s infinite;
     border-radius: 0px;
 }
 
