@@ -1,18 +1,20 @@
 * {
-    background-color: gold;
-    color: black;
+    background-color: #d4fadd;
+    color: #1b4332;
     font-family: 'Carme', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {}
+body {
+    overflow: hidden;
+}
 
 .under-animation {
     display: inline-block;
     position: relative;
-    color: black;
+    color: #1b4332;
 }
 
 .under-animation::after {
@@ -24,7 +26,7 @@ body {}
     bottom: 0;
     border-radius: 25px;
     left: 0;
-    background-color: black;
+    background-color: #1b4332;
     transform-origin: center;
     transition: transform 0.25s ease-out;
 }
@@ -44,15 +46,15 @@ nav {
     gap: 2vw;
     padding: 2vh;
     font-size: 3.5vh;
-    transition: top 1s;
-    background-color: gold;
+    transition: top .5s;
+    background-color: #d4fadd;
     z-index: 2;
 }
 
 nav a,
 nav a:visited {
     text-decoration: none;
-    color: black;
+    color: #1b4332;
 }
 
 #main {
@@ -71,7 +73,6 @@ nav a:visited {
 }
 
 .center {
-    position: absolute;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -79,6 +80,7 @@ nav a:visited {
     width: inherit;
     height: 100vh;
     visibility: hidden;
+    position: absolute;
     opacity: 0;
 }
 
@@ -107,7 +109,7 @@ h4 {
 #title,
 #about,
 #overview {
-    transition: transform 1s, visibility 1s, opacity 1s;
+    transition: transform .5s, visibility .5s, opacity .5s;
 }
 
 .btn {
@@ -116,9 +118,9 @@ h4 {
     justify-content: center;
     width: 3.5vw;
     height: 3.5vw;
-    border: .5vw solid rgb(201, 121, 0);
+    border: .5vw solid #B1AFFF;
     transform: rotate(45deg);
-    background-color: gold;
+    background-color: #d4fadd;
     border-radius: 1vw;
     transition: transform 300ms;
 }
@@ -131,26 +133,26 @@ h4 {
 .btn:hover {
     transform: scale(1.2);
     border-radius: 0;
-    border: .5vw solid rgb(0, 0, 0);
+    border: .5vw solid #1b4332;
 }
 
 .inner.selected {
-    background-color: black;
-    border: gold
+    background-color: #1b4332;
+    border: #d4fadd
 }
 
-.inner:hover {
-    background-color: black;
-    border: gold
+.btn:hover>.inner {
+    background-color: #1b4332;
+    border: #d4fadd
 }
 
 .btn.selected {
-    border: .5vw solid rgb(0, 0, 0);
+    border: .5vw solid #1b4332;
 }
 
 @keyframes slide-up {
     0% {
-        transform: translateY(-100%);
+        transform: translateY(+100%);
     }
     100% {
         transform: translateY(0);
@@ -158,7 +160,7 @@ h4 {
 }
 
 .slide {
-    animation: slide-up 1s ease-out;
+    animation: slide-up .5s ease-out;
 }
 
 @keyframes slide-down {
@@ -166,10 +168,93 @@ h4 {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(100%);
+        transform: translateY(-100%);
     }
 }
 
 .slide-down {
-    animation: slide-down 1s ease-out;
+    animation: slide-down .5s ease-out;
+}
+
+.special-links {
+    text-decoration: underline #1b4332;
+    padding: 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.links:hover {
+    box-sizing: border-box;
+    background-color: #c8c6ff;
+    color: #1b4332;
+    text-decoration: underline #c8c6ff;
+    border-radius: 5px;
+}
+
+.special {
+    font-weight: bold;
+}
+
+#western {
+    font-weight: bold;
+    color: lightpu;
+}
+
+#western a:active,
+#western a:visited {
+    color: #7412c4;
+}
+
+#western a:hover {
+    box-sizing: border-box;
+    background-color: rgba(187, 136, 255, 0.3);
+    text-decoration: underline #7412c4;
+    border-radius: 5px;
+}
+
+.special {
+    color: crimson;
+    background-color: #d4fadd;
+}
+
+#special {
+    color: navy;
+    font-size: 2.5vw;
+    font-weight: bold;
+    background-color: #d4fadd;
+}
+
+p {
+    font-size: 1.7vw;
+    line-height: 5vh;
+}
+
+.var {
+    animation: flicker 2s infinite;
+}
+
+.underline:after {
+    content: "";
+    float: left;
+    background: #1b4332;
+    width: 100%;
+    height: 1vw;
+    margin: 1vw;
+    margin-left: 0;
+    border-radius: 5vw;
+}
+
+.underlines:after {
+    content: "";
+    float: left;
+    background: #1b4332;
+    width: 100%;
+    height: .5vw;
+    margin-bottom: 5vh;
+    border-radius: 5vw;
+}
+
+ul {
+    list-style-image: url('bullet.png');
+    list-style-position: outside;
 }

@@ -1,14 +1,14 @@
-var prevScrollPos = window.pageYOffset;
+var prevScrollPos = window.scrollY;
 
 var title = document.getElementById('title');
 var about = document.getElementById('about');
 var over = document.getElementById('overview');
-// over.style.transform = 'translateY(-100vh)';
 
 
+const divs = [];
 
 window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
+    var currentScrollPos = window.scrollY;
     var nav = document.getElementsByTagName("nav")[0];
 
     if (prevScrollPos < currentScrollPos) {
@@ -25,43 +25,65 @@ var child = content.querySelectorAll('div');
 child[0].style.visibility = 'visible';
 child[0].style.opacity = '1';
 for (var i = 0; i < child.length; i++) {
-    console.log(child[i]);
+    var prev, next;
+    if (child[i].previousElementSibling != null) {
+        prev = child[i].previousElementSibling;
+    } else {
+        prev = child[child.length - 1];
+    }
+    if (child[i].nextElementSibling != null) {
+        next = child[i].nextElementSibling;
+    } else {
+        next = child[0];
+    }
+    const temp = {
+        myself: child[i].id,
+        prev: prev,
+        next: next
+    };
+
+    divs.push(temp);
+
     // set opacity of all child divs to 0, if it is not the first child
     if (i != 0) {
         child[i].style.visibility = 'hidden';
     }
 
     child[i].addEventListener('click', function(e) {
-        this.style.visibility = 'hidden';
-        this.classList.toggle('slide-down');
-        this.style.opacity = '0';
-        this.nextElementSibling.style.visibility = 'visible';
-        this.nextElementSibling.classList.toggle('slide');
-        this.nextElementSibling.style.opacity = '1';
-        console.log("Hid " + this.id);
-        console.log("Showed " + this.nextElementSibling.id);
+        var clickedId = this.id;
+        var me = divs.find(function(obj) {
+            return obj.myself === clickedId;
+        });
+        if (me) {
+            this.style.visibility = 'hidden';
+            this.style.opacity = '0';
+            me.next.style.visibility = 'visible';
+            me.next.classList.toggle('slide');
+            me.next.addEventListener('animationend', function() {
+                me.next.classList.remove('slide');
+            });
+            me.next.style.opacity = '1';
+            console.log("Hid " + this.id);
+            console.log("Showed " + me.next.id);
 
+        }
     });
 }
 
-// title.addEventListener('click', function() {
-//     title.style.transform = 'translateY(-100vh)';
-//     setTimeout(function() {
-//         title.style.visibility = 'hidden';
-//         title.style.transform = 'translateY(100vh)';
-//         about.style.transform = 'translateY(-100vh)';
 
-//     }, 500);
+// get element with id "btns" and store it in div
+var parent = document.getElementById('btns');
+var num = document.getElementsByClassName('center').length;
 
-// })
-
-// about.addEventListener('click', function() {
-//     about.style.transform = 'translateY(-100vh)';
-//     setTimeout(function() {
-//         about.style.visibility = 'hidden';
-//         about.style.transform = 'translateY(100vh)';
-//         over.style.transform = 'translateY(-100vh)';
-
-//     }, 1000);
-
-// })
+for (var i = 0; i < num; i++) {
+    var temp = document.createElement('div');
+    var inner = document.createElement('div');
+    temp.classList.add('btn');
+    inner.classList.add('inner');
+    if (i == 0) {
+        temp.classList.add('selected');
+        inner.classList.add('selected');
+    }
+    temp.appendChild(inner);
+    parent.appendChild(temp);
+}

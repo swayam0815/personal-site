@@ -3,14 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swayam's Site</title>
-    <link rel="stylesheet" href="dark-styles.css">
-    <script src="script.js" defer></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 
 </head>
 
@@ -19,37 +18,41 @@
         <a href=index.html class="under-animation">HOME</a> <a class="under-animation">Projects</a><a class="under-animation">Origami</a> <a>Books</a>
     </nav>
 
-    <div id="overview">
-        <div>
-            <div id='index'>
-                <div id="title-box">
-                    <div id="main-left">
-                        <h4 id="t-text">Welcome to,</h4>
-                        <h1 id="title" class='play-animation'>Swayam's Site</h1>
-                    </div>
-                </div>
+    <div id="main">
 
-
-
-                <div class="desc" id="about">
-                    <div class="heading">
-                        <h1>About</h1>
-                    </div>
-                    <p>My name is Swayam Sachdeva. <br>I'm a <span class="special">Computer Science</span> student at <span id="western"><a href="https://uwo.ca/">Western University</a></span>.</p>
-
-
-                </div>
-
-
-                <div class="desc" id="desc">
-                    <div class="heading">
-                        <h1>Content</h1>
-                    </div>
-                    <p>On this site you can find all the <span class="special-links links">projects</span> I'm working on, my <span class="special-links links">origami</span> and the <span class="special-links links">books</span> I'm reading.</p>
-
-                </div>
+        <div id="content">
+            <div id='title' class='center'>
+                <h4>Welcome to,</h4>
+                <h1 class='underline'>Swayam's Site</h1>
             </div>
+            <div id='about' class='center'>
+                <h4 class='underlines'>About</h4>
+                <ul>
+                    <li>
+                        <p class='text'>Hey there, nice to meet you! My name is <span id="special">Swayam Sachdeva</span>.</li>
+
+                    <li>
+                        <p>I'm a <span class="special">Computer Science</span> <span class="var">student</span> at <span id="western"><a href="https://uwo.ca/">Western University</a></span>.</p>
+                        </p>
+                    </li>
+                    <li>
+                        <p class='text'>I currently know Java, Python, and full-stack web-development (HTML, CSS, JS)</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div id='overview' class='center'>
+                <h4 class='underlines'>Content</h4>
+                <p class='text'>On this site you can find all the <span class="special-links links">projects</span> I'm working on, my <span class="special-links links">origami</span> and the <span class="special-links links">books</span> I'm reading.</p>
+            </div>
+
+
         </div>
+        <div id='btns'>
+
+        </div>
+
+    </div>
     </div>
 
 </body>
