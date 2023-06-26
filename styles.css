@@ -32,7 +32,7 @@ body {
     bottom: 0;
     border-radius: 25px;
     left: 0;
-    background-color: var(--green);
+    background-color: #ffb700;
     transform-origin: center;
     transition: transform 0.25s ease-out;
 }
@@ -278,7 +278,7 @@ ul li::marker {
     z-index: 2;
     border-radius: 2vw;
     width: 25vw;
-    height: 95vh;
+    height: auto;
     border: .7vw solid #ffd95e;
     display: flex;
     align-items: center;
@@ -286,11 +286,12 @@ ul li::marker {
 }
 
 #menu {
+    box-sizing: border-box;
     background: rgb(255, 238, 183);
     background: radial-gradient(circle, rgba(255, 238, 183, 1) 0%, rgba(255, 255, 255, 1) 100%);
     border-radius: 1.4vw;
     width: inherit;
-    height: 92.5vh;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
