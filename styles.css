@@ -1,5 +1,11 @@
+:root {
+    --purple: #B1AFFF;
+    --green: #1b4332;
+    --lightGreen: #d4fadd;
+}
+
 * {
-    color: #1b4332;
+    color: var(--green);
     font-family: 'Carme', sans-serif;
     padding: 0;
     margin: 0;
@@ -8,14 +14,13 @@
 
 body {
     overflow: hidden;
-    background: rgb(212, 250, 221);
+    background: var(--darkGreen);
     background: radial-gradient(circle, rgba(212, 250, 221, 1) 56%, rgba(244, 249, 245, 1) 100%);
 }
 
 .under-animation {
     display: inline-block;
     position: relative;
-    color: #1b4332;
 }
 
 .under-animation::after {
@@ -23,11 +28,11 @@ body {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 3px;
+    height: 1vh;
     bottom: 0;
     border-radius: 25px;
     left: 0;
-    background-color: #1b4332;
+    background-color: orange;
     transform-origin: center;
     transition: transform 0.25s ease-out;
 }
@@ -98,7 +103,7 @@ h4 {
     justify-content: center;
     width: 3.5vw;
     height: 3.5vw;
-    border: .5vw solid #B1AFFF;
+    border: .5vw solid var(--purple);
     transform: rotate(45deg);
     border-radius: 1vw;
     transition: transform 300ms, border-radius 5s;
@@ -113,25 +118,25 @@ h4 {
     transform: scale(1.2);
     transform: rotate(90deg);
     border-radius: 0;
-    border: .5vw solid #1b4332;
+    border: .5vw solid var(--green);
     border-radius: 1vw;
 }
 
 .btn:hover>.inner {
-    background-color: #1b4332;
-    border: #d4fadd;
+    background-color: var(--green);
+    border: var(--darkGreen);
 }
 
 .selected {
-    border: .5vw solid #1b4332;
+    border: .5vw solid var(--green);
     transform: rotate(90deg);
     border-radius: 0px;
-    color: #1b4332;
+    color: var(--green);
 }
 
 .btn.selected>.inner {
-    background-color: #1b4332;
-    border: #d4fadd;
+    background-color: var(--green);
+    border: var(--darkGreen);
 }
 
 @keyframes spin {
@@ -170,7 +175,7 @@ h4 {
 }
 
 .special-links {
-    text-decoration: underline #1b4332;
+    text-decoration: underline var(--green);
     padding: 0;
     border-radius: 5px;
     box-sizing: border-box;
@@ -179,7 +184,7 @@ h4 {
 .links:hover {
     box-sizing: border-box;
     background-color: #c8c6ff;
-    color: #1b4332;
+    color: var(--green);
     text-decoration: underline #c8c6ff;
     border-radius: 5px;
 }
@@ -227,7 +232,7 @@ p {
 .underline:after {
     content: "";
     float: left;
-    background: #1b4332;
+    background: var(--green);
     width: 100%;
     height: 1vw;
     margin: 1vw;
@@ -238,7 +243,7 @@ p {
 .underlines:after {
     content: "";
     float: left;
-    background: #1b4332;
+    background: var(--green);
     width: 100%;
     height: .5vw;
     margin-bottom: 5vh;
@@ -274,7 +279,7 @@ li {
     .btn {
         width: 6vw;
         height: 6vw;
-        border: .5vw solid #B1AFFF;
+        border: .5vw solid var(--purple);
         transform: rotate(45deg);
         border-radius: 1vw;
     }
@@ -287,7 +292,7 @@ li {
 #nav-menu {
     position: absolute;
     z-index: 2;
-    border: .7vw solid #B1AFFF;
+    border: .7vw solid rgba(255, 196, 135, 1);
     border-radius: 2vw;
     width: 25vw;
     height: 95vh;
@@ -298,7 +303,8 @@ li {
 }
 
 #menu {
-    background-color: whitesmoke;
+    background: rgb(255, 233, 210);
+    background: radial-gradient(circle, rgba(255, 233, 210, 1) 56%, rgba(244, 249, 245, 1) 100%);
     border-radius: 1.4vw;
     width: 25vw;
     height: 92.5vh;
@@ -318,5 +324,28 @@ nav {
 nav a,
 nav a:visited {
     text-decoration: none;
-    color: #1b4332;
+    padding: 2vh;
+    color: orange;
+}
+
+#menu-button {
+    position: absolute;
+    z-index: 1;
+    width: 4vw;
+    height: 4vw;
+    margin: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: solid .3vw var(--green);
+    border-radius: .5vw;
+    background-color: var(--lightGreen);
+}
+
+#line {
+    width: 3vw;
+    border: solid .3vw var(--green);
+    border-radius: .5vw;
+    margin: .3vw;
 }

@@ -1,5 +1,30 @@
 var prevScrollPos = window.scrollY;
 
+var navmenu = document.getElementById('nav-menu');
+var menubtn = document.getElementById('menu-button');
+var shown = false;
+navmenu.style.visibility = 'hidden';
+navmenu.style.transform = 'translateX(-' + navmenu.clientWidth * 2 + 'px)';
+
+setTimeout(() => {
+    navmenu.style.visibility = 'visible';
+
+    navmenu.style.transition = 'transform .5s';
+
+}, 100);
+
+menubtn.addEventListener('click', function() {
+    if (!shown) {
+        navmenu.style.transform = 'translateX(' + navmenu.clientWidth / 4 + 'px)';
+        shown = true;
+    } else {
+        navmenu.style.transform = 'translateX(-' + navmenu.clientWidth * 2 + 'px)';
+        shown = false;
+    }
+
+});
+
+
 var title = document.getElementById('title');
 var about = document.getElementById('about');
 var over = document.getElementById('overview');
@@ -43,10 +68,7 @@ for (var i = 0; i < child.length; i++) {
         child[i].style.visibility = 'hidden';
     }
 
-    child[i].addEventListener('click', function() {
-        console.log(this);
-        changeDiv(this);
-    });
+
 }
 
 
