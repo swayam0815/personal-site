@@ -15,7 +15,7 @@
 body {
     overflow: hidden;
     background: var(--green);
-    background: radial-gradient(circle, rgba(212, 250, 221, 1) 56%, rgba(244, 249, 245, 1) 100%);
+    background: radial-gradient(circle, var(--lightGreen) 56%, rgba(244, 249, 245, 1) 100%);
 }
 
 .under-animation {
@@ -106,7 +106,7 @@ h4 {
     border: .5vw solid var(--purple);
     transform: rotate(45deg);
     border-radius: 1vw;
-    transition: transform 300ms, border-radius 5s;
+    transition: transform 300ms, border-radius 1s;
 }
 
 .inner {
@@ -195,19 +195,19 @@ h4 {
 
 #western {
     font-weight: bold;
-    color: #7412c4;
+    color: #b55bff;
 }
 
 #western a:active,
 #western a:visited {
     font-weight: bold;
-    color: #7412c4;
+    color: #b55bff;
 }
 
 #western a:hover {
     box-sizing: border-box;
     background-color: rgba(187, 136, 255, 0.3);
-    text-decoration: underline #7412c4;
+    text-decoration: underline #b55bff;
     border-radius: 5px;
 }
 
