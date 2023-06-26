@@ -372,8 +372,6 @@ nav a:visited {
 
 #menu {
     position: relative;
-    /* Add this line */
-    /* Other existing styles */
 }
 
 #made {
@@ -413,7 +411,7 @@ nav a:visited {
     }
     #nav-menu {
         border-radius: 2vw;
-        width: 25vw;
+        width: 30vw;
         height: auto;
         border: .7vw solid #ffd95e;
     }
@@ -423,7 +421,7 @@ nav a:visited {
         height: 35.5vh;
     }
     nav {
-        font-size: 3.5vw;
+        font-size: 6vw;
         z-index: 2;
     }
     nav a,
@@ -433,9 +431,26 @@ nav a:visited {
         padding: 1.5vh;
     }
     #made {
-        font-size: 1vw;
+        font-size: 1.5vw;
         position: absolute;
         bottom: 0;
         margin: 0;
+    }
+    .under-animation::after {
+        height: 1vw;
+    }
+    #menu-button,
+    #x-button {
+        width: 6vw;
+        height: 6vw;
+        margin: 2vw;
+        border: solid .3vw var(--green);
+    }
+    .line,
+    .line2 {
+        width: 4vw;
+        border: solid .4vw var(--green);
+        border-radius: .5vw;
+        transition: transform 300ms;
     }
 }
