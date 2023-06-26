@@ -12,18 +12,6 @@ window.onload = function() {
 const divs = [];
 const buttons = [];
 
-window.onscroll = function() {
-    var currentScrollPos = window.scrollY;
-    var nav = document.getElementsByTagName("nav")[0];
-
-    if (prevScrollPos < currentScrollPos) {
-        nav.style.top = "0";
-    } else {
-        nav.style.top = "-100px";
-    }
-
-    prevScrollPos = currentScrollPos;
-};
 
 var content = document.getElementById('content');
 var child = content.querySelectorAll('div');

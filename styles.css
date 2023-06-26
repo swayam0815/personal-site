@@ -37,26 +37,6 @@ body {
     transform-origin: center;
 }
 
-nav {
-    position: fixed;
-    top: -100px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 2vw;
-    padding: 2vh;
-    font-size: 3.5vh;
-    transition: top .4s;
-    z-index: 2;
-}
-
-nav a,
-nav a:visited {
-    text-decoration: none;
-    color: #1b4332;
-}
-
 #main {
     display: flex;
     flex-direction: row;
@@ -146,6 +126,7 @@ h4 {
     border: .5vw solid #1b4332;
     transform: rotate(90deg);
     border-radius: 0px;
+    color: #1b4332;
 }
 
 .btn.selected>.inner {
@@ -301,4 +282,41 @@ li {
         width: 2.5vw;
         height: 2.5vw;
     }
+}
+
+#nav-menu {
+    position: absolute;
+    z-index: 2;
+    border: .7vw solid #B1AFFF;
+    border-radius: 2vw;
+    width: 25vw;
+    height: 95vh;
+    margin: 2.5vh 0 2.5vh 2.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu {
+    background-color: whitesmoke;
+    border-radius: 1.4vw;
+    width: 25vw;
+    height: 92.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3.5vw;
+    z-index: 2;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    color: #1b4332;
 }
