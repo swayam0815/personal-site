@@ -290,9 +290,11 @@ li {
 }
 
 #nav-menu {
+    background: rgb(255, 233, 210);
+    background: radial-gradient(circle, rgba(255, 233, 210, 1) 56%, rgba(244, 249, 245, 1) 100%);
     position: absolute;
     z-index: 2;
-    border: .7vw solid rgba(255, 196, 135, 1);
+    border: .7vw solid #fdfdfc;
     border-radius: 2vw;
     width: 25vw;
     height: 95vh;
@@ -306,7 +308,7 @@ li {
     background: rgb(255, 233, 210);
     background: radial-gradient(circle, rgba(255, 233, 210, 1) 56%, rgba(244, 249, 245, 1) 100%);
     border-radius: 1.4vw;
-    width: 25vw;
+    width: inherit;
     height: 92.5vh;
     display: flex;
     justify-content: center;
@@ -325,12 +327,11 @@ nav a,
 nav a:visited {
     text-decoration: none;
     padding: 2vh;
-    color: orange;
 }
 
 #menu-button {
     position: absolute;
-    z-index: 1;
+    z-index: 5;
     width: 4vw;
     height: 4vw;
     margin: 2vw;
@@ -343,9 +344,44 @@ nav a:visited {
     background-color: var(--lightGreen);
 }
 
-#line {
+#menu-button:hover {
+    background-color: var(--green);
+}
+
+#menu-button:hover>.line {
+    border: solid 0.3vw var(--lightGreen);
+}
+
+.line,
+.line2 {
     width: 3vw;
     border: solid .3vw var(--green);
     border-radius: .5vw;
     margin: .3vw;
+    transition: transform 300ms;
+}
+
+.line2:nth-child(1) {
+    transform: translateY(100%) rotate(45deg);
+    border: solid 0.3vw var(--lightGreen);
+}
+
+.line2:nth-child(2) {
+    transform: translateY(-100%) rotate(-45deg);
+    border: solid 0.3vw var(--lightGreen);
+}
+
+#x-button {
+    position: absolute;
+    z-index: 1;
+    width: 4vw;
+    height: 4vw;
+    margin: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: solid .3vw var(--green);
+    border-radius: .5vw;
+    background-color: var(--green);
 }

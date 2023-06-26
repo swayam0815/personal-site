@@ -2,7 +2,7 @@ var prevScrollPos = window.scrollY;
 
 var navmenu = document.getElementById('nav-menu');
 var menubtn = document.getElementById('menu-button');
-var shown = false;
+var xbtn = document.getElementById('x-button');
 navmenu.style.visibility = 'hidden';
 navmenu.style.transform = 'translateX(-' + navmenu.clientWidth * 2 + 'px)';
 
@@ -14,13 +14,13 @@ setTimeout(() => {
 }, 100);
 
 menubtn.addEventListener('click', function() {
-    if (!shown) {
-        navmenu.style.transform = 'translateX(' + navmenu.clientWidth / 4 + 'px)';
-        shown = true;
-    } else {
-        navmenu.style.transform = 'translateX(-' + navmenu.clientWidth * 2 + 'px)';
-        shown = false;
-    }
+    navmenu.style.transform = 'translateX(' + navmenu.clientWidth / 4 + 'px)';
+    xbtn.style.zIndex = '6';
+});
+
+xbtn.addEventListener('click', function() {
+    navmenu.style.transform = 'translateX(-' + navmenu.clientWidth * 2 + 'px)';
+    xbtn.style.zIndex = '1';
 
 });
 
@@ -29,10 +29,6 @@ var title = document.getElementById('title');
 var about = document.getElementById('about');
 var over = document.getElementById('overview');
 var active;
-window.onload = function() {
-    // alert("Click on the text to scroll through the page rn, I'm too lazy to do finish the buttons, site also looks better on computer")
-};
-
 
 const divs = [];
 const buttons = [];
