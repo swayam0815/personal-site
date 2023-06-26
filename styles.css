@@ -14,7 +14,7 @@
 
 body {
     overflow: hidden;
-    background: var(--darkGreen);
+    background: var(--green);
     background: radial-gradient(circle, rgba(212, 250, 221, 1) 56%, rgba(244, 249, 245, 1) 100%);
 }
 
@@ -124,7 +124,7 @@ h4 {
 
 .btn:hover>.inner {
     background-color: var(--green);
-    border: var(--darkGreen);
+    border: var(--green);
 }
 
 .selected {
@@ -136,7 +136,7 @@ h4 {
 
 .btn.selected>.inner {
     background-color: var(--green);
-    border: var(--darkGreen);
+    border: var(--green);
 }
 
 @keyframes spin {
@@ -250,13 +250,24 @@ p {
     border-radius: 5vw;
 }
 
+@counter-style lightning {
+    system: cyclic;
+    symbols: "\26A1";
+    suffix: " ";
+}
+
 ul {
-    list-style-image: url('bullet.png');
+    list-style: lightning;
     list-style-position: outside;
 }
 
 li {
     margin: 1.5vw;
+}
+
+ul li::marker {
+    font-size: 2vw;
+    /* Adjust the size as desired */
 }
 
 @media (max-width: 768px) {
@@ -290,11 +301,11 @@ li {
 }
 
 #nav-menu {
-    background: rgb(255, 233, 210);
-    background: radial-gradient(circle, rgba(255, 233, 210, 1) 56%, rgba(244, 249, 245, 1) 100%);
+    background: var(--green);
+    background: radial-gradient(circle, rgba(212, 250, 221, 1) 56%, rgba(244, 249, 245, 1) 100%);
     position: absolute;
     z-index: 2;
-    border: .7vw solid #fdfdfc;
+    border: .7vw solid var(--lightGreen);
     border-radius: 2vw;
     width: 25vw;
     height: 95vh;
@@ -305,14 +316,15 @@ li {
 }
 
 #menu {
-    background: rgb(255, 233, 210);
-    background: radial-gradient(circle, rgba(255, 233, 210, 1) 56%, rgba(244, 249, 245, 1) 100%);
+    background: var(--green);
+    background: radial-gradient(circle, rgba(212, 250, 221, 1) 56%, rgba(244, 249, 245, 1) 100%);
     border-radius: 1.4vw;
     width: inherit;
     height: 92.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 nav {
@@ -384,4 +396,17 @@ nav a:visited {
     border: solid .3vw var(--green);
     border-radius: .5vw;
     background-color: var(--green);
+}
+
+#menu {
+    position: relative;
+    /* Add this line */
+    /* Other existing styles */
+}
+
+#made {
+    font-size: 1vw;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2vh;
 }
