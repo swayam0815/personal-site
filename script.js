@@ -1,28 +1,26 @@
-var prevScrollPos = window.scrollY;
+// // var navmenu = document.getElementById('nav-menu');
+// // var menubtn = document.getElementById('menu-button');
+// var xbtn = document.getElementById('x-button');
+// navmenu.style.visibility = 'hidden';
+// navmenu.style.transform = 'translateX(-100%)';
 
-var navmenu = document.getElementById('nav-menu');
-var menubtn = document.getElementById('menu-button');
-var xbtn = document.getElementById('x-button');
-navmenu.style.visibility = 'hidden';
-navmenu.style.transform = 'translateX(-100%)';
+// setTimeout(() => {
+//     navmenu.style.visibility = 'visible';
 
-setTimeout(() => {
-    navmenu.style.visibility = 'visible';
+//     navmenu.style.transition = 'transform .5s';
 
-    navmenu.style.transition = 'transform .5s';
+// }, 100);
 
-}, 100);
+// menubtn.addEventListener('click', function() {
+//     navmenu.style.transform = 'translateX(25%)';
+//     xbtn.style.zIndex = '6';
+// });
 
-menubtn.addEventListener('click', function() {
-    navmenu.style.transform = 'translateX(25%)';
-    xbtn.style.zIndex = '6';
-});
+// xbtn.addEventListener('click', function() {
+//     navmenu.style.transform = 'translateX(-100%)';
+//     xbtn.style.zIndex = '1';
 
-xbtn.addEventListener('click', function() {
-    navmenu.style.transform = 'translateX(-100%)';
-    xbtn.style.zIndex = '1';
-
-});
+// });
 
 
 var title = document.getElementById('title');
