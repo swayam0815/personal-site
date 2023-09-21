@@ -391,51 +391,6 @@ nav a:visited {
     margin-bottom: 2vh;
 }
 
-#projects {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2vw;
-    width: inherit;
-    height: 50%;
-}
-
-.project img {
-    width: 75%;
-    border-radius: 2vw;
-}
-
-.project {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.project img:hover {
-    transform: scale(1.1);
-    transition: transform .5s;
-}
-
-.project img:not(:hover) {
-    transform: scale(1);
-    transition: transform .5s;
-}
-
-#rr:hover {
-    box-shadow: 0 0 10px red, 0 0 40px blueviolet, 0 0 80px pink;
-}
-
-#rt:hover {
-    box-shadow: 0 0 10px black, 0 0 40px black, 0 0 80px black;
-}
-
-#pl:hover {
-    box-shadow: 0 0 10px green, 0 0 40px darkgreen, 0 0 80px greenyellow;
-}
-
-
-/* pulsing keyframe animation */
-
 @media (max-width: 768px) {
     .underlines:after {
         margin-bottom: 1vh;
@@ -507,12 +462,5 @@ nav a:visited {
         border: solid .4vw var(--green);
         border-radius: .5vw;
         transition: transform 300ms;
-    }
-    #projects {
-        flex-direction: column;
-        margin: 2vh;
-    }
-    .project {
-        width: 60%;
     }
 }

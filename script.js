@@ -76,18 +76,6 @@ function changeDiv(show, hide) {
         show.classList.remove('slide');
     });
     show.style.opacity = '1';
-
-    // get all the children of show node
-    var child = show.querySelectorAll('div');
-    // if length of child is greater than 0, then go through the child nodes and set their opacity to 1 and visiblity to visible
-    if (child.length > 0) {
-        for (var i = 0; i < child.length; i++) {
-            child[i].style.opacity = '1';
-            child[i].style.visibility = 'visible';
-        }
-    }
-
-
 }
 
 
